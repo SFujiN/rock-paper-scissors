@@ -51,3 +51,17 @@ function game() {
         console.log(`Tie! You both won ${playerScore} out of 5 games`)
     }
 }
+
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
+
+rockBtn.addEventListener('click', () => {
+    console.log(playRound('Rock', getComputerChoice()));
+});
+paperBtn.addEventListener('click', () => {
+    console.log(playRound('Paper', getComputerChoice()));
+});
+scissorsBtn.addEventListener('click', () => {
+    console.log(playRound('Scissors', getComputerChoice()));
+});
