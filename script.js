@@ -9,7 +9,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    result = '';
+    let result = '';
     pMove = playerSelection.toLowerCase();
     cMove = computerSelection.toLowerCase();
     if (pMove === cMove) {
@@ -55,13 +55,14 @@ function game() {
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
+let result = document.querySelector('#result');
 
 rockBtn.addEventListener('click', () => {
-    console.log(playRound('Rock', getComputerChoice()));
+    result.textContent = playRound('Rock', getComputerChoice());
 });
 paperBtn.addEventListener('click', () => {
-    console.log(playRound('Paper', getComputerChoice()));
+    result.textContent = playRound('Paper', getComputerChoice());
 });
 scissorsBtn.addEventListener('click', () => {
-    console.log(playRound('Scissors', getComputerChoice()));
+    result.textContent = playRound('Scissors', getComputerChoice());
 });
