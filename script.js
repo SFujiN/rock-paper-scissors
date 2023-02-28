@@ -55,14 +55,37 @@ function game() {
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
-let result = document.querySelector('#result');
+let resultDiv = document.querySelector('#result');
+let playerScore = 0;
+let computerScore = 0;
 
 rockBtn.addEventListener('click', () => {
-    result.textContent = playRound('Rock', getComputerChoice());
+    let result = playRound('Rock', getComputerChoice());
+    if (result.split('!')[0] === 'You Win') {
+        playerScore++;
+    }
+    if (result.split('!')[0] === 'You Lose') {
+        computerScore++;
+    }
+    resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
 });
 paperBtn.addEventListener('click', () => {
-    result.textContent = playRound('Paper', getComputerChoice());
+    let result = playRound('Paper', getComputerChoice());
+    if (result.split('!')[0] === 'You Win') {
+        playerScore++;
+    }
+    if (result.split('!')[0] === 'You Lose') {
+        computerScore++;
+    }
+    resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
 });
 scissorsBtn.addEventListener('click', () => {
-    result.textContent = playRound('Scissors', getComputerChoice());
+    let result = playRound('Scissors', getComputerChoice());
+    if (result.split('!')[0] === 'You Win') {
+        playerScore++;
+    }
+    if (result.split('!')[0] === 'You Lose') {
+        computerScore++;
+    }
+    resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
 });
