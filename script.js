@@ -51,5 +51,3 @@ function game() {
         console.log(`Tie! You both won ${playerScore} out of 5 games`)
     }
 }
-
-game();
