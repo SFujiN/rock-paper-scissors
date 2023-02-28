@@ -58,8 +58,12 @@ const scissorsBtn = document.querySelector('#scissors');
 let resultDiv = document.querySelector('#result');
 let playerScore = 0;
 let computerScore = 0;
+let gameOver = false;
 
 rockBtn.addEventListener('click', () => {
+    if (gameOver) {
+        return;
+    }
     let result = playRound('Rock', getComputerChoice());
     if (result.split('!')[0] === 'You Win') {
         playerScore++;
@@ -68,8 +72,20 @@ rockBtn.addEventListener('click', () => {
         computerScore++;
     }
     resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
+    if (playerScore === 5 || computerScore == 5) {
+        if (playerScore > computerScore) {
+            resultDiv.textContent = 'Winner!';
+        }
+        else {
+            resultDiv.textContent = 'Loser...';
+        }
+        gameOver = true;
+    }
 });
 paperBtn.addEventListener('click', () => {
+    if (gameOver) {
+        return;
+    }
     let result = playRound('Paper', getComputerChoice());
     if (result.split('!')[0] === 'You Win') {
         playerScore++;
@@ -78,8 +94,20 @@ paperBtn.addEventListener('click', () => {
         computerScore++;
     }
     resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
+    if (playerScore === 5 || computerScore == 5) {
+        if (playerScore > computerScore) {
+            resultDiv.textContent = 'Winner!';
+        }
+        else {
+            resultDiv.textContent = 'Loser...';
+        }
+        gameOver = true;
+    }
 });
 scissorsBtn.addEventListener('click', () => {
+    if (gameOver) {
+        return;
+    }
     let result = playRound('Scissors', getComputerChoice());
     if (result.split('!')[0] === 'You Win') {
         playerScore++;
@@ -88,4 +116,13 @@ scissorsBtn.addEventListener('click', () => {
         computerScore++;
     }
     resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
+    if (playerScore === 5 || computerScore == 5) {
+        if (playerScore > computerScore) {
+            resultDiv.textContent = 'Winner!';
+        }
+        else {
+            resultDiv.textContent = 'Loser...';
+        }
+        gameOver = true;
+    }
 });
