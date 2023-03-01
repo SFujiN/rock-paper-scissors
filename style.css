@@ -1,3 +1,7 @@
+body {
+    background-color: #6D6060;
+}
+
 .body-container {
     display: flex;
     flex-direction: column;
@@ -12,10 +16,29 @@
 #player-card,
 #result-card,
 #computer-card {
-    width: 100px;
-    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 300px;
     padding: 10px;
+    margin: 1px;
+    border-radius: 5% 10%;
     text-align: center;
+    color: #E3DFDF;
+    background-color: #928080;
+    border: 1px solid #494040;
+}
+
+#player-choice,
+#computer-choice {
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border-radius: 5%;
 }
 
 #result-card {
