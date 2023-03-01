@@ -126,7 +126,7 @@ scissorsBtn.addEventListener('click', () => {
         playerScoreDiv.textContent = ++playerScore;
     }
     if (result.split('!')[0] === 'You Lose') {
-        computerScoreDive.textContent = ++computerScore;
+        computerScoreDiv.textContent = ++computerScore;
     }
     resultDiv.textContent = `${result}`;
     if (playerScore === 5 || computerScore == 5) {
