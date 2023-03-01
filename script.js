@@ -55,7 +55,11 @@ function game() {
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
-let resultDiv = document.querySelector('#result');
+const resultDiv = document.querySelector('#result');
+const playerChoiceDiv = document.querySelector('#player-choice');
+const playerScoreDiv = document.querySelector('#player-score');
+const computerChoiceDiv = document.querySelector('#computer-choice');
+const computerScoreDiv = document.querySelector('#computer-score');
 let playerScore = 0;
 let computerScore = 0;
 let gameOver = false;
@@ -64,20 +68,23 @@ rockBtn.addEventListener('click', () => {
     if (gameOver) {
         return;
     }
-    let result = playRound('Rock', getComputerChoice());
+    let computerChoice = getComputerChoice();
+    let result = playRound('Rock', computerChoice);
+    playerChoiceDiv.textContent = 'Rock';
+    computerChoiceDiv.textContent = computerChoice;
     if (result.split('!')[0] === 'You Win') {
-        playerScore++;
+        playerScoreDiv.textContent = ++playerScore;
     }
     if (result.split('!')[0] === 'You Lose') {
-        computerScore++;
+        computerScoreDiv.textContent = ++computerScore;
     }
-    resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
+    resultDiv.textContent = `${result}`;
     if (playerScore === 5 || computerScore == 5) {
         if (playerScore > computerScore) {
-            resultDiv.textContent = 'Winner!';
+            resultDiv.textContent = 'Game Over, Winner!';
         }
         else {
-            resultDiv.textContent = 'Loser...';
+            resultDiv.textContent = 'Game Over, Loser...';
         }
         gameOver = true;
     }
@@ -86,20 +93,23 @@ paperBtn.addEventListener('click', () => {
     if (gameOver) {
         return;
     }
-    let result = playRound('Paper', getComputerChoice());
+    let computerChoice = getComputerChoice();
+    let result = playRound('Paper', computerChoice);
+    playerChoiceDiv.textContent = 'Paper';
+    computerChoiceDiv.textContent = computerChoice;
     if (result.split('!')[0] === 'You Win') {
-        playerScore++;
+        playerScoreDiv.textContent = ++playerScore;
     }
     if (result.split('!')[0] === 'You Lose') {
-        computerScore++;
+        computerScoreDiv.textContent = ++computerScore;
     }
-    resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
+    resultDiv.textContent = `${result}`;
     if (playerScore === 5 || computerScore == 5) {
         if (playerScore > computerScore) {
-            resultDiv.textContent = 'Winner!';
+            resultDiv.textContent = 'Game Over, Winner!';
         }
         else {
-            resultDiv.textContent = 'Loser...';
+            resultDiv.textContent = 'Game Over, Loser...';
         }
         gameOver = true;
     }
@@ -108,20 +118,23 @@ scissorsBtn.addEventListener('click', () => {
     if (gameOver) {
         return;
     }
-    let result = playRound('Scissors', getComputerChoice());
+    let computerChoice = getComputerChoice();
+    let result = playRound('Scissors', computerChoice);
+    playerChoiceDiv.textContent = 'Scissors';
+    computerChoiceDiv.textContent = computerChoice;
     if (result.split('!')[0] === 'You Win') {
-        playerScore++;
+        playerScoreDiv.textContent = ++playerScore;
     }
     if (result.split('!')[0] === 'You Lose') {
-        computerScore++;
+        computerScoreDive.textContent = ++computerScore;
     }
-    resultDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}\n${result}`;
+    resultDiv.textContent = `${result}`;
     if (playerScore === 5 || computerScore == 5) {
         if (playerScore > computerScore) {
-            resultDiv.textContent = 'Winner!';
+            resultDiv.textContent = 'Game Over, Winner!';
         }
         else {
-            resultDiv.textContent = 'Loser...';
+            resultDiv.textContent = 'Game Over, You Lose...';
         }
         gameOver = true;
     }
