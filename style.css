@@ -9,6 +9,7 @@ body {
 }
 
 button {
+    color: black;
     width: 72px;
     height: 72px;
     border: 12px outset white;
