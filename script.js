@@ -55,11 +55,12 @@ function game() {
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
+const resetBtn = document.querySelector('#reset');
 const resultDiv = document.querySelector('#result');
-const playerChoiceDiv = document.querySelector('#player-choice');
-const playerScoreDiv = document.querySelector('#player-score');
-const computerChoiceDiv = document.querySelector('#computer-choice');
-const computerScoreDiv = document.querySelector('#computer-score');
+const playerChoiceDiv = document.querySelector('#player-choice-card');
+const playerScoreDiv = document.querySelector('#player-card .score');
+const computerChoiceDiv = document.querySelector('#computer-choice-card');
+const computerScoreDiv = document.querySelector('#computer-card .score');
 let playerScore = 0;
 let computerScore = 0;
 let gameOver = false;
@@ -138,4 +139,13 @@ scissorsBtn.addEventListener('click', () => {
         }
         gameOver = true;
     }
+});
+
+resetBtn.addEventListener('click', () => {
+    playerChoiceDiv.textContent = '';
+    computerChoiceDiv.textContent = '';
+    playerScoreDiv.textContent = playerScore = 0;
+    computerScoreDiv.textContent =  computerScore = 0;
+    resultDiv.textContent = 'New Game!'
+    gameOver = false;
 });
