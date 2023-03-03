@@ -61,6 +61,8 @@ const playerChoiceDiv = document.querySelector('#player-choice-card');
 const playerScoreDiv = document.querySelector('#player-card .score');
 const computerChoiceDiv = document.querySelector('#computer-choice-card');
 const computerScoreDiv = document.querySelector('#computer-card .score');
+const playerImg = document.querySelector('#player-choice-img');
+const computerImg = document.querySelector('#computer-choice-img');
 let playerScore = 0;
 let computerScore = 0;
 let gameOver = false;
@@ -71,8 +73,8 @@ rockBtn.addEventListener('click', () => {
     }
     let computerChoice = getComputerChoice();
     let result = playRound('Rock', computerChoice);
-    playerChoiceDiv.textContent = 'Rock';
-    computerChoiceDiv.textContent = computerChoice;
+    playerImg.src = './img/rock.png';
+    computerImg.src = `./img/${computerChoice.toLowerCase()}.png`;
     if (result.split('!')[0] === 'You Win') {
         playerScoreDiv.textContent = ++playerScore;
     }
@@ -96,8 +98,8 @@ paperBtn.addEventListener('click', () => {
     }
     let computerChoice = getComputerChoice();
     let result = playRound('Paper', computerChoice);
-    playerChoiceDiv.textContent = 'Paper';
-    computerChoiceDiv.textContent = computerChoice;
+    playerImg.src = './img/paper.png';
+    computerImg.src = `./img/${computerChoice.toLowerCase()}.png`;
     if (result.split('!')[0] === 'You Win') {
         playerScoreDiv.textContent = ++playerScore;
     }
@@ -121,8 +123,8 @@ scissorsBtn.addEventListener('click', () => {
     }
     let computerChoice = getComputerChoice();
     let result = playRound('Scissors', computerChoice);
-    playerChoiceDiv.textContent = 'Scissors';
-    computerChoiceDiv.textContent = computerChoice;
+    playerImg.src = './img/scissors.png';
+    computerImg.src = `./img/${computerChoice.toLowerCase()}.png`;
     if (result.split('!')[0] === 'You Win') {
         playerScoreDiv.textContent = ++playerScore;
     }
@@ -142,8 +144,8 @@ scissorsBtn.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', () => {
-    playerChoiceDiv.textContent = '';
-    computerChoiceDiv.textContent = '';
+    delete playerImg.src;
+    delete computerImg.src;
     playerScoreDiv.textContent = playerScore = 0;
     computerScoreDiv.textContent =  computerScore = 0;
     resultDiv.textContent = 'New Game!'
