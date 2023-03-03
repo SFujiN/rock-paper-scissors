@@ -5,7 +5,7 @@ For now, will run on the console.
 - ~~Make the UI prettier~~
 - ~~Refactor code/logic in a week~~
 - ~~Add some art~~
-- Make the art work with the reset button
+- ~~Make the art work with the reset button~~
 - In the far/near future maybe add versus?
 
 ## run

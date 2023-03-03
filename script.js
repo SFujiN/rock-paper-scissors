@@ -144,8 +144,8 @@ scissorsBtn.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', () => {
-    delete playerImg.src;
-    delete computerImg.src;
+    playerImg.src = './img/default.png';
+    computerImg.src = './img/default.png';
     playerScoreDiv.textContent = playerScore = 0;
     computerScoreDiv.textContent =  computerScore = 0;
     resultDiv.textContent = 'New Game!'
