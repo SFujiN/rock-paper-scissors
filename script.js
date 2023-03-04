@@ -84,10 +84,10 @@ rockBtn.addEventListener('click', () => {
     resultDiv.textContent = `${result}`;
     if (playerScore === 5 || computerScore == 5) {
         if (playerScore > computerScore) {
-            resultDiv.textContent = 'Game Over, Winner!';
+            resultDiv.textContent = 'Game Over, You Win!';
         }
         else {
-            resultDiv.textContent = 'Game Over, Loser...';
+            resultDiv.textContent = 'Game Over, You Lose...';
         }
         gameOver = true;
     }
@@ -109,10 +109,10 @@ paperBtn.addEventListener('click', () => {
     resultDiv.textContent = `${result}`;
     if (playerScore === 5 || computerScore == 5) {
         if (playerScore > computerScore) {
-            resultDiv.textContent = 'Game Over, Winner!';
+            resultDiv.textContent = 'Game Over, You Win!';
         }
         else {
-            resultDiv.textContent = 'Game Over, Loser...';
+            resultDiv.textContent = 'Game Over, You Lose...';
         }
         gameOver = true;
     }
@@ -134,7 +134,7 @@ scissorsBtn.addEventListener('click', () => {
     resultDiv.textContent = `${result}`;
     if (playerScore === 5 || computerScore == 5) {
         if (playerScore > computerScore) {
-            resultDiv.textContent = 'Game Over, Winner!';
+            resultDiv.textContent = 'Game Over, You Win!';
         }
         else {
             resultDiv.textContent = 'Game Over, You Lose...';
@@ -148,6 +148,6 @@ resetBtn.addEventListener('click', () => {
     computerImg.src = './img/default.png';
     playerScoreDiv.textContent = playerScore = 0;
     computerScoreDiv.textContent =  computerScore = 0;
-    resultDiv.textContent = 'New Game!'
+    resultDiv.textContent = 'New Game! First to 5 wins!'
     gameOver = false;
 });
